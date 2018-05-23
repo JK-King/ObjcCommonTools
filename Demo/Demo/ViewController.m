@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "VerificationTools.h"
 
 @interface ViewController ()
 
@@ -17,6 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    NSLog(@"%d", [VerificationTools checkEmailAdress:@"zhang_jiankun521@162.com"]);
+    
+    NSLog(@"%d", [VerificationTools checkBankCard:@"6250760009375240"]);
 }
 
 

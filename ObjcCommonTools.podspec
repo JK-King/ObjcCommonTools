@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ObjcCommonTools"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "工具库"
 
   # This description is used to generate tags and improve search results.
@@ -24,7 +24,11 @@ Pod::Spec.new do |s|
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = "此工具库包含加密、解密；手机号校验、邮箱校验；手机号中间数字显示*"
+  s.description  = "此工具库包含加密、解密；手机号校验、邮箱校验；手机号中间数字显示*
+  									VerificationTools 验证类
+  									EncryptionMD5 MD5加密类
+  									EncryptionDES des加密类
+  									GTMBase64  base64加密类"
 
   s.homepage     = "https://github.com/JK-King/ObjcCommonTools"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"

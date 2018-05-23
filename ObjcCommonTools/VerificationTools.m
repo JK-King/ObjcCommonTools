@@ -1,14 +1,14 @@
 //
-//  CheckTools.m
-//  BOEHealthy
+//  VerificationTools.m
+//  Demo
 //
-//  Created by Jiankun Zhang on 2016/11/30.
-//  Copyright © 2016年 boe.com. All rights reserved.
+//  Created by Jiankun Zhang on 2018/5/23.
+//  Copyright © 2018年 Jiankun Zhang. All rights reserved.
 //
 
-#import "CheckTools.h"
+#import "VerificationTools.h"
 
-@implementation CheckTools
+@implementation VerificationTools
 
 //判断手机号码格式是否正确
 + (BOOL)valiMobile:(NSString *)mobile
@@ -74,15 +74,15 @@
     return NO;
 }
 #pragma 判断身份证号 是否合法
-+ (BOOL)judgeIdentityStringValid:(NSString *)identityString {
++ (BOOL)checkIdentityValid:(NSString *)identity {
     
-    if (identityString.length != 18) return NO;
+    if (identity.length != 18) return NO;
     // 正则表达式判断基本 身份证号是否满足格式
     NSString *regex = @"^[1-9]\\d{5}[1-9]\\d{3}((0\\d)|(1[0-2]))(([0|1|2]\\d)|3[0-1])\\d{3}([0-9]|X)$";
     //  NSString *regex = @"^(^[1-9]\\d{7}((0\\d)|(1[0-2]))(([0|1|2]\\d)|3[0-1])\\d{3}$)|(^[1-9]\\d{5}[1-9]\\d{3}((0\\d)|(1[0-2]))(([0|1|2]\\d)|3[0-1])((\\d{4})|\\d{3}[Xx])$)$";
     NSPredicate *identityStringPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
     //如果通过该验证，说明身份证格式正确，但准确性还需计算
-    if(![identityStringPredicate evaluateWithObject:identityString]) return NO;
+    if(![identityStringPredicate evaluateWithObject:identity]) return NO;
     
     //** 开始进行校验 *//
     
@@ -95,7 +95,7 @@
     //用来保存前17位各自乖以加权因子后的总和
     NSInteger idCardWiSum = 0;
     for(int i = 0;i < 17;i++) {
-        NSInteger subStrIndex = [[identityString substringWithRange:NSMakeRange(i, 1)] integerValue];
+        NSInteger subStrIndex = [[identity substringWithRange:NSMakeRange(i, 1)] integerValue];
         NSInteger idCardWiIndex = [[idCardWiArray objectAtIndex:i] integerValue];
         idCardWiSum+= subStrIndex * idCardWiIndex;
     }
@@ -103,7 +103,7 @@
     //计算出校验码所在数组的位置
     NSInteger idCardMod=idCardWiSum%11;
     //得到最后一位身份证号码
-    NSString *idCardLast= [identityString substringWithRange:NSMakeRange(17, 1)];
+    NSString *idCardLast= [identity substringWithRange:NSMakeRange(17, 1)];
     //如果等于2，则说明校验码是10，身份证号码最后一位应该是X
     if(idCardMod==2) {
         if(![idCardLast isEqualToString:@"X"]|| ![idCardLast isEqualToString:@"x"]) {
@@ -117,6 +117,52 @@
         }
     }
     return YES;
+}
+
++ (BOOL)checkEmailAdress:(NSString *)Email {
+    NSString *emailCheck = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES%@",emailCheck];
+    return [emailTest evaluateWithObject:Email];
+}
+
++ (BOOL)checkBankCard:(NSString *)cardNumber
+{
+    if(cardNumber.length==0)
+    {
+        return NO;
+    }
+    NSString *digitsOnly = @"";
+    char c;
+    for (int i = 0; i < cardNumber.length; i++)
+    {
+        c = [cardNumber characterAtIndex:i];
+        if (isdigit(c))
+        {
+            digitsOnly =[digitsOnly stringByAppendingFormat:@"%c",c];
+        }
+    }
+    int sum = 0;
+    int digit = 0;
+    int addend = 0;
+    BOOL timesTwo = false;
+    for (NSInteger i = digitsOnly.length - 1; i >= 0; i--)
+    {
+        digit = [digitsOnly characterAtIndex:i] - '0';
+        if (timesTwo)
+        {
+            addend = digit * 2;
+            if (addend > 9) {
+                addend -= 9;
+            }
+        }
+        else {
+            addend = digit;
+        }
+        sum += addend;
+        timesTwo = !timesTwo;
+    }
+    int modulus = sum % 10;
+    return modulus == 0;
 }
 
 @end

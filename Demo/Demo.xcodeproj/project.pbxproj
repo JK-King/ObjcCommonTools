@@ -15,6 +15,10 @@
 		34BD7D1A20B53DAA00C0E6D6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BD7D1920B53DAA00C0E6D6 /* main.m */; };
 		34BD7D2420B53DAB00C0E6D6 /* DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BD7D2320B53DAB00C0E6D6 /* DemoTests.m */; };
 		34BD7D2F20B53DAB00C0E6D6 /* DemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BD7D2E20B53DAB00C0E6D6 /* DemoUITests.m */; };
+		34BD7D4220B543EA00C0E6D6 /* VerificationTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BD7D4120B543EA00C0E6D6 /* VerificationTools.m */; };
+		34BD7D4520B5485500C0E6D6 /* EncryptionMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BD7D4420B5485500C0E6D6 /* EncryptionMD5.m */; };
+		34BD7D4820B5488C00C0E6D6 /* EncryptionDES.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BD7D4720B5488C00C0E6D6 /* EncryptionDES.m */; };
+		34BD7D4C20B548DE00C0E6D6 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BD7D4920B548DE00C0E6D6 /* GTMBase64.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,15 @@
 		34BD7D2A20B53DAB00C0E6D6 /* DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		34BD7D2E20B53DAB00C0E6D6 /* DemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoUITests.m; sourceTree = "<group>"; };
 		34BD7D3020B53DAB00C0E6D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34BD7D4020B543EA00C0E6D6 /* VerificationTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerificationTools.h; sourceTree = "<group>"; };
+		34BD7D4120B543EA00C0E6D6 /* VerificationTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerificationTools.m; sourceTree = "<group>"; };
+		34BD7D4320B5485500C0E6D6 /* EncryptionMD5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EncryptionMD5.h; sourceTree = "<group>"; };
+		34BD7D4420B5485500C0E6D6 /* EncryptionMD5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EncryptionMD5.m; sourceTree = "<group>"; };
+		34BD7D4620B5488C00C0E6D6 /* EncryptionDES.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EncryptionDES.h; sourceTree = "<group>"; };
+		34BD7D4720B5488C00C0E6D6 /* EncryptionDES.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EncryptionDES.m; sourceTree = "<group>"; };
+		34BD7D4920B548DE00C0E6D6 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
+		34BD7D4A20B548DE00C0E6D6 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
+		34BD7D4B20B548DE00C0E6D6 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +114,7 @@
 		34BD7D0920B53DA900C0E6D6 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				34BD7D3C20B53DC100C0E6D6 /* ObjcCommonTools */,
 				34BD7D0A20B53DA900C0E6D6 /* AppDelegate.h */,
 				34BD7D0B20B53DA900C0E6D6 /* AppDelegate.m */,
 				34BD7D0D20B53DA900C0E6D6 /* ViewController.h */,
@@ -130,6 +144,23 @@
 				34BD7D3020B53DAB00C0E6D6 /* Info.plist */,
 			);
 			path = DemoUITests;
+			sourceTree = "<group>";
+		};
+		34BD7D3C20B53DC100C0E6D6 /* ObjcCommonTools */ = {
+			isa = PBXGroup;
+			children = (
+				34BD7D4020B543EA00C0E6D6 /* VerificationTools.h */,
+				34BD7D4120B543EA00C0E6D6 /* VerificationTools.m */,
+				34BD7D4320B5485500C0E6D6 /* EncryptionMD5.h */,
+				34BD7D4420B5485500C0E6D6 /* EncryptionMD5.m */,
+				34BD7D4620B5488C00C0E6D6 /* EncryptionDES.h */,
+				34BD7D4720B5488C00C0E6D6 /* EncryptionDES.m */,
+				34BD7D4A20B548DE00C0E6D6 /* GTMBase64.h */,
+				34BD7D4920B548DE00C0E6D6 /* GTMBase64.m */,
+				34BD7D4B20B548DE00C0E6D6 /* GTMDefines.h */,
+			);
+			name = ObjcCommonTools;
+			path = ../../ObjcCommonTools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,8 +294,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				34BD7D0F20B53DA900C0E6D6 /* ViewController.m in Sources */,
+				34BD7D4220B543EA00C0E6D6 /* VerificationTools.m in Sources */,
+				34BD7D4520B5485500C0E6D6 /* EncryptionMD5.m in Sources */,
 				34BD7D1A20B53DAA00C0E6D6 /* main.m in Sources */,
 				34BD7D0C20B53DA900C0E6D6 /* AppDelegate.m in Sources */,
+				34BD7D4820B5488C00C0E6D6 /* EncryptionDES.m in Sources */,
+				34BD7D4C20B548DE00C0E6D6 /* GTMBase64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
