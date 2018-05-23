@@ -64,6 +64,7 @@
 		34BD7D4920B548DE00C0E6D6 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
 		34BD7D4A20B548DE00C0E6D6 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
 		34BD7D4B20B548DE00C0E6D6 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		34BD7D4E20B5545400C0E6D6 /* CommonHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonHeader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +159,7 @@
 				34BD7D4A20B548DE00C0E6D6 /* GTMBase64.h */,
 				34BD7D4920B548DE00C0E6D6 /* GTMBase64.m */,
 				34BD7D4B20B548DE00C0E6D6 /* GTMDefines.h */,
+				34BD7D4E20B5545400C0E6D6 /* CommonHeader.h */,
 			);
 			name = ObjcCommonTools;
 			path = ../../ObjcCommonTools;

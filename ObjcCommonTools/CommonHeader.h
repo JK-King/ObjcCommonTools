@@ -9,5 +9,10 @@
 #ifndef CommonHeader_h
 #define CommonHeader_h
 
+#ifdef DEBUG
+#define DBLog(fmt, ...) NSLog((@"function:%s-[line:%d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+#define DBLog(...);
+#endif
 
 #endif /* CommonHeader_h */
