@@ -19,6 +19,7 @@
 		34BD7D4520B5485500C0E6D6 /* EncryptionMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BD7D4420B5485500C0E6D6 /* EncryptionMD5.m */; };
 		34BD7D4820B5488C00C0E6D6 /* EncryptionDES.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BD7D4720B5488C00C0E6D6 /* EncryptionDES.m */; };
 		34BD7D4C20B548DE00C0E6D6 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BD7D4920B548DE00C0E6D6 /* GTMBase64.m */; };
+		34E9050220B7A29F00EF7391 /* KingTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E9050120B7A29F00EF7391 /* KingTimer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		34BD7D4A20B548DE00C0E6D6 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
 		34BD7D4B20B548DE00C0E6D6 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		34BD7D4E20B5545400C0E6D6 /* CommonHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonHeader.h; sourceTree = "<group>"; };
+		34E9050020B7A29F00EF7391 /* KingTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KingTimer.h; sourceTree = "<group>"; };
+		34E9050120B7A29F00EF7391 /* KingTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KingTimer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +163,8 @@
 				34BD7D4920B548DE00C0E6D6 /* GTMBase64.m */,
 				34BD7D4B20B548DE00C0E6D6 /* GTMDefines.h */,
 				34BD7D4E20B5545400C0E6D6 /* CommonHeader.h */,
+				34E9050020B7A29F00EF7391 /* KingTimer.h */,
+				34E9050120B7A29F00EF7391 /* KingTimer.m */,
 			);
 			name = ObjcCommonTools;
 			path = ../../ObjcCommonTools;
@@ -295,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34E9050220B7A29F00EF7391 /* KingTimer.m in Sources */,
 				34BD7D0F20B53DA900C0E6D6 /* ViewController.m in Sources */,
 				34BD7D4220B543EA00C0E6D6 /* VerificationTools.m in Sources */,
 				34BD7D4520B5485500C0E6D6 /* EncryptionMD5.m in Sources */,
