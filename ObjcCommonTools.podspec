@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ObjcCommonTools"
-  s.version      = "0.0.4"
+  s.version      = "0.0.4.1"
   s.summary      = "工具库"
 
   # This description is used to generate tags and improve search results.
