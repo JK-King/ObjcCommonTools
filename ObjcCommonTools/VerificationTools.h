@@ -61,7 +61,7 @@
  @param Email 邮箱账号
  @return 是否符合
  */
-+ (BOOL)checkEmailAdress:(NSString *)Email;
++ (BOOL)checkEmailAdress:(NSString *)email;
 
 /**
  校验银行账号的合法性

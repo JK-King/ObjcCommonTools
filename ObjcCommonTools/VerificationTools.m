@@ -25,7 +25,7 @@
         /**
          * 联通号段正则表达式
          */
-        NSString *CU_NUM = @"^((13[0-2])|(145)|(15[5-6])|(176)|(18[5,6]))\\d{8}|(1709)\\d{7}$";
+        NSString *CU_NUM = @"^((13[0-2])|(145)|(15[5-6])|(176)|(166)|(18[5,6]))\\d{8}|(1709)\\d{7}$";
         /**
          * 电信号段正则表达式
          */
@@ -67,7 +67,7 @@
 + (BOOL)checkStringContainChinese:(NSString *)stringChecked{
     for (NSInteger i = 0; i < [stringChecked length]; i++) {
         int index = [stringChecked characterAtIndex:i];
-        if (index > 0x4e00 && index < 0x9fff) {
+        if (index >= 0x4e00 && index <= 0x9fff) {
             return YES;
         }
     }
@@ -119,10 +119,10 @@
     return YES;
 }
 
-+ (BOOL)checkEmailAdress:(NSString *)Email {
++ (BOOL)checkEmailAdress:(NSString *)email {
     NSString *emailCheck = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES%@",emailCheck];
-    return [emailTest evaluateWithObject:Email];
+    return [emailTest evaluateWithObject:email];
 }
 
 + (BOOL)checkBankCard:(NSString *)cardNumber
