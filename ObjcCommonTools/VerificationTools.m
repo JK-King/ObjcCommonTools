@@ -90,7 +90,7 @@
     NSArray *idCardWiArray = @[@"7", @"9", @"10", @"5", @"8", @"4", @"2", @"1", @"6", @"3", @"7", @"9", @"10", @"5", @"8", @"4", @"2"];
     
     //这是除以11后，可能产生的11位余数、验证码，也保存成数组
-    NSArray *idCardYArray = @[@"1", @"0", @"10", @"9", @"8", @"7", @"6", @"5", @"4", @"3", @"2"];
+    NSArray *idCardYArray = @[@"1", @"0", @"X", @"9", @"8", @"7", @"6", @"5", @"4", @"3", @"2"];
     
     //用来保存前17位各自乖以加权因子后的总和
     NSInteger idCardWiSum = 0;
@@ -106,7 +106,7 @@
     NSString *idCardLast= [identity substringWithRange:NSMakeRange(17, 1)];
     //如果等于2，则说明校验码是10，身份证号码最后一位应该是X
     if(idCardMod==2) {
-        if(![idCardLast isEqualToString:@"X"]|| ![idCardLast isEqualToString:@"x"]) {
+        if(![idCardLast isEqualToString:@"X"]) {
             return NO;
         }
     }
