@@ -58,7 +58,7 @@
 /**
  校验邮箱的合法性
 
- @param Email 邮箱账号
+ @param email 邮箱账号
  @return 是否符合
  */
 + (BOOL)checkEmailAdress:(NSString *)email;
@@ -70,5 +70,94 @@
  @return 是否合法
  */
 + (BOOL)checkBankCard:(NSString *)cardNumber;
+
+
+/**
+ 校验是否为中文
+
+ @param string 字符串
+ @return 是否合法
+ */
++ (BOOL)valiChineseCharacters:(NSString*)string;
+
+/**
+ 校验是否为数字
+
+ @param string 字符串
+ @return 是否合法
+ */
++ (BOOL)valiNumber:(NSString*)string;
+
+/**
+ 校验是否为小写字符
+ 
+ @param string 字符串
+ @return 是否合法
+ */
++ (BOOL)valiLowercaseLetter:(NSString*)string;
+
+/**
+ 校验是否为大写字符
+ 
+ @param string 字符串
+ @return 是否合法
+ */
++ (BOOL)valiACapital:(NSString*)string;
+
+/**
+ 校验是否为大小写字符
+ 
+ @param string 字符串
+ @return 是否合法
+ */
++ (BOOL)valiCapitalAndLowercaseLetter:(NSString*)string;
+
+/**
+ 校验是否为大小写字符或者数字
+ 
+ @param string 字符串
+ @return 是否合法
+ */
++ (BOOL)valiLettersOrNumbers:(NSString*)string;
+
+/**
+ 校验是否为大小写字符或者数字 限制长度
+ 
+ @param string 字符串
+ @return 是否合法
+ */
++ (BOOL)valiNumberOrLetters:(NSString*)string;
+
+/**
+ 校验是否为汉字或者数字
+ 
+ @param string 字符串
+ @return 是否合法
+ */
++ (BOOL)valiChineseOrNumbers:(NSString*)string;
+
+/**
+ 校验是否为汉字或者数字 限制长度
+ 
+ @param string 字符串
+ @return 是否合法
+ */
++ (BOOL)valiChineseOrNumbersLimit:(NSString*)string;
+
+/**
+ 校验是否为汉字、大小写或数字
+ 
+ @param string 字符串
+ @return 是否合法
+ */
++ (BOOL)valiChineseOrLettersAndNumbers:(NSString*)string;
+
+/**
+ 校验是否为汉字、大小写或数字 限制长度
+ 
+ @param string 字符串
+ @return 是否合法
+ */
++ (BOOL)valiChineseOrLettersNumberslimit:(NSString*)string;
 
 @end

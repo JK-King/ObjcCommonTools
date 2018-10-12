@@ -10,7 +10,7 @@
 
 @implementation VerificationTools
 
-//判断手机号码格式是否正确
+#pragma - mark 判断手机号码格式是否正确
 + (BOOL)valiMobile:(NSString *)mobile
 {
     mobile = [mobile stringByReplacingOccurrencesOfString:@" " withString:@""];
@@ -73,6 +73,7 @@
     }
     return NO;
 }
+
 #pragma 判断身份证号 是否合法
 + (BOOL)checkIdentityValid:(NSString *)identity {
     
@@ -119,12 +120,14 @@
     return YES;
 }
 
+#pragma - mark 校验邮箱
 + (BOOL)checkEmailAdress:(NSString *)email {
     NSString *emailCheck = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES%@",emailCheck];
     return [emailTest evaluateWithObject:email];
 }
 
+#pragma - mark 校验银行卡号
 + (BOOL)checkBankCard:(NSString *)cardNumber
 {
     if(cardNumber.length==0)
@@ -163,6 +166,95 @@
     }
     int modulus = sum % 10;
     return modulus == 0;
+}
+
+#pragma - mark 只能为中文
++ (BOOL)valiChineseCharacters:(NSString*)string {
+    NSString *regex =@"[\u4e00-\u9fa5]+";
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
+    BOOL isChinese = [predicate evaluateWithObject:string];
+    return isChinese;
+}
+
+#pragma - mark 只能为数字
++ (BOOL)valiNumber:(NSString*)string {
+    NSString *numString =@"[0-9]*";
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",numString];
+    BOOL isNumber = [predicate evaluateWithObject:string];
+    return isNumber;
+}
+
+#pragma - mark 只能为小写
++ (BOOL)valiLowercaseLetter:(NSString*)string {
+    NSString *regex =@"[a-z]*";
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
+    BOOL isLower = [predicate evaluateWithObject:string];
+    return isLower;
+}
+
+#pragma - mark 只能为大写
++ (BOOL)valiACapital:(NSString*)string {
+    NSString *regex =@"[A-Z]*";
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
+    BOOL isACapital = [predicate evaluateWithObject:string];
+    return isACapital;
+}
+
+#pragma - mark 允许大小写
++ (BOOL)valiCapitalAndLowercaseLetter:(NSString*)string {
+    NSString *regex =@"[a-zA-Z]*";
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
+    BOOL isCL = [predicate evaluateWithObject:string];
+    return isCL;
+}
+
+#pragma - mark 允许含大小写或数字(不限字数)
++ (BOOL)valiLettersOrNumbers:(NSString*)string {
+    NSString *regex =@"[a-zA-Z0-9]*";
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
+    BOOL isLN = [predicate evaluateWithObject:string];
+    return isLN;
+}
+
+#pragma - mark 允许含大小写或数字(限字数)
+
++ (BOOL)valiNumberOrLetters:(NSString*)string {
+    NSString *regex =@"^[A-Za-z0-9]{6,20}+$";
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
+    BOOL isLn = [predicate evaluateWithObject:string];
+    return isLn;
+}
+
+#pragma - mark 允许汉字或数字(不限字数)
++ (BOOL)valiChineseOrNumbers:(NSString*)string {
+    NSString *regex =@"[\u4e00-\u9fa5]+[0-9]*";
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
+    BOOL isChN = [predicate evaluateWithObject:string];
+    return isChN;
+}
+
+#pragma - mark 允许汉字或数字(限字数)
++ (BOOL)valiChineseOrNumbersLimit:(NSString*)string {
+    NSString *regex =@"[\u4e00-\u9fa5][0-9]{6,20}+$";
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
+    BOOL isChN = [predicate evaluateWithObject:string];
+    return isChN;
+}
+
+#pragma - mark 允许汉字 大小写或数字(不限字数)
++ (BOOL)valiChineseOrLettersAndNumbers:(NSString*)string {
+    NSString *regex =@"[\u4e00-\u9fa5]+[A-Za-z0-9]*";
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
+    BOOL isCLN = [predicate evaluateWithObject:string];
+    return isCLN;
+}
+
+#pragma - mark 允许汉字 大小写或数字(限字数)
++ (BOOL)valiChineseOrLettersNumberslimit:(NSString*)string {
+    NSString *regex =@"[\u4e00-\u9fa5]+[A-Za-z0-9]{6,20}+$";
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
+    BOOL isCLN = [predicate evaluateWithObject:string];
+    return isCLN;
 }
 
 @end
