@@ -251,7 +251,7 @@
 
 #pragma - mark 允许汉字 大小写或数字(限字数)
 + (BOOL)valiChineseOrLettersNumberslimit:(NSString*)string {
-    NSString *regex =@"[\u4e00-\u9fa5]+[A-Za-z0-9]{6,20}+$";
+    NSString *regex =@"[\u4e00-\u9fa5]+[A-Za-z0-9_]{6,20}+$";
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
     BOOL isCLN = [predicate evaluateWithObject:string];
     return isCLN;

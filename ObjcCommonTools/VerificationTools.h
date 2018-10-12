@@ -153,7 +153,7 @@
 + (BOOL)valiChineseOrLettersAndNumbers:(NSString*)string;
 
 /**
- 校验是否为汉字、大小写或数字 限制长度
+ 校验是否为汉字、大小写、数字或_ 限制长度
  
  @param string 字符串
  @return 是否合法
