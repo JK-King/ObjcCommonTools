@@ -227,7 +227,7 @@
 
 #pragma - mark 允许汉字或数字(不限字数)
 + (BOOL)valiChineseOrNumbers:(NSString*)string {
-    NSString *regex =@"[\u4e00-\u9fa5]+[0-9]*";
+    NSString *regex =@"([\u4e00-\u9fa5]|[0-9])*";
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
     BOOL isChN = [predicate evaluateWithObject:string];
     return isChN;
@@ -235,7 +235,7 @@
 
 #pragma - mark 允许汉字或数字(限字数)
 + (BOOL)valiChineseOrNumbersLimit:(NSString*)string {
-    NSString *regex =@"[\u4e00-\u9fa5][0-9]{6,20}+$";
+    NSString *regex =@"([\u4e00-\u9fa5]|[0-9]){6,20}+$";
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
     BOOL isChN = [predicate evaluateWithObject:string];
     return isChN;
@@ -243,7 +243,7 @@
 
 #pragma - mark 允许汉字 大小写或数字(不限字数)
 + (BOOL)valiChineseOrLettersAndNumbers:(NSString*)string {
-    NSString *regex =@"[\u4e00-\u9fa5]+[A-Za-z0-9]*";
+    NSString *regex =@"[\u4e00-\u9fa5]|[A-Za-z0-9]|[_])*";
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
     BOOL isCLN = [predicate evaluateWithObject:string];
     return isCLN;
@@ -251,7 +251,7 @@
 
 #pragma - mark 允许汉字 大小写或数字(限字数)
 + (BOOL)valiChineseOrLettersNumberslimit:(NSString*)string {
-    NSString *regex =@"[\u4e00-\u9fa5]+[A-Za-z0-9_]{6,20}+$";
+    NSString *regex =@"([\u4e00-\u9fa5]|[A-Za-z0-9]|[_]){6,20}+$";
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
     BOOL isCLN = [predicate evaluateWithObject:string];
     return isCLN;
