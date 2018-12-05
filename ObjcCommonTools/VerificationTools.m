@@ -257,4 +257,11 @@
     return isCLN;
 }
 
++ (BOOL)valiFirstNumberAddLength:(NSString *)string {
+    NSString *regex =@"1\\d{10}";
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
+    BOOL isCLN = [predicate evaluateWithObject:string];
+    return isCLN;
+}
+
 @end

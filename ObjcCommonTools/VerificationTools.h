@@ -160,4 +160,12 @@
  */
 + (BOOL)valiChineseOrLettersNumberslimit:(NSString*)string;
 
+/**
+ 校验是否为1开头的数字并且长度为11
+
+ @param string 字符串
+ @return 是否合法
+ */
++ (BOOL)valiFirstNumberAddLength:(NSString *)string;
+
 @end
