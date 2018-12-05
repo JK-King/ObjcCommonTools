@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		342F804D21B7968400DF9A4F /* EncryptionRSA.m in Sources */ = {isa = PBXBuildFile; fileRef = 342F804C21B7968400DF9A4F /* EncryptionRSA.m */; };
 		34BD7D0C20B53DA900C0E6D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BD7D0B20B53DA900C0E6D6 /* AppDelegate.m */; };
 		34BD7D0F20B53DA900C0E6D6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BD7D0E20B53DA900C0E6D6 /* ViewController.m */; };
 		34BD7D1220B53DA900C0E6D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34BD7D1020B53DA900C0E6D6 /* Main.storyboard */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		342F804B21B7968400DF9A4F /* EncryptionRSA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EncryptionRSA.h; sourceTree = "<group>"; };
+		342F804C21B7968400DF9A4F /* EncryptionRSA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EncryptionRSA.m; sourceTree = "<group>"; };
 		34BD7D0720B53DA900C0E6D6 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34BD7D0A20B53DA900C0E6D6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		34BD7D0B20B53DA900C0E6D6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -165,6 +168,8 @@
 				34BD7D4E20B5545400C0E6D6 /* CommonHeader.h */,
 				34E9050020B7A29F00EF7391 /* KingTimer.h */,
 				34E9050120B7A29F00EF7391 /* KingTimer.m */,
+				342F804B21B7968400DF9A4F /* EncryptionRSA.h */,
+				342F804C21B7968400DF9A4F /* EncryptionRSA.m */,
 			);
 			name = ObjcCommonTools;
 			path = ../../ObjcCommonTools;
@@ -305,6 +310,7 @@
 				34BD7D4220B543EA00C0E6D6 /* VerificationTools.m in Sources */,
 				34BD7D4520B5485500C0E6D6 /* EncryptionMD5.m in Sources */,
 				34BD7D1A20B53DAA00C0E6D6 /* main.m in Sources */,
+				342F804D21B7968400DF9A4F /* EncryptionRSA.m in Sources */,
 				34BD7D0C20B53DA900C0E6D6 /* AppDelegate.m in Sources */,
 				34BD7D4820B5488C00C0E6D6 /* EncryptionDES.m in Sources */,
 				34BD7D4C20B548DE00C0E6D6 /* GTMBase64.m in Sources */,
