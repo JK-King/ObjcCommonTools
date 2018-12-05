@@ -21,15 +21,15 @@
         /**
          * 移动号段正则表达式
          */
-        NSString *CM_NUM = @"^((13[4-9])|(147)|(15[0-2,7-9])|(178)|(18[2-4,7-8]))\\d{8}|(1705)\\d{7}$";
+        NSString *CM_NUM = @"^((13[4-9])|(147)|(148)|(15[0-2,7-9])|(165)|(172)|(178)|(18[2-4,7-8]))\\d{8}|(1705)\\d{7}$";
         /**
          * 联通号段正则表达式
          */
-        NSString *CU_NUM = @"^((13[0-2])|(145)|(15[5-6])|(176)|(166)|(18[5,6]))\\d{8}|(1709)\\d{7}$";
+        NSString *CU_NUM = @"^((13[0-2])|(145)|(146)|(15[5-6])|(166)|(175)|(176)|(18[5,6]))\\d{8}|(1709)\\d{7}$";
         /**
          * 电信号段正则表达式
          */
-        NSString *CT_NUM = @"^((173)|(133)|(153)|(177)|(199)|(18[0,1,9]))\\d{8}$";
+        NSString *CT_NUM = @"^((133)|(149)|(153)|(173)|(174)|(177)|(199)|(170)|(18[0,1,9]))\\d{8}$";
         NSPredicate *pred1 = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CM_NUM];
         BOOL isMatch1 = [pred1 evaluateWithObject:mobile];
         NSPredicate *pred2 = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CU_NUM];
