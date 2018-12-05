@@ -277,13 +277,13 @@ static NSData *base64_decode(NSString *str){
     return ret;
 }
 
-+ (NSString *)encryptString:(NSString *)str privateKey:(NSString *)privKey{
-    NSData *data = [EncryptionRSA encryptData:[str dataUsingEncoding:NSUTF8StringEncoding] privateKey:privKey];
++ (NSString *)jk_encryptString:(NSString *)str privateKey:(NSString *)privKey{
+    NSData *data = [EncryptionRSA jk_encryptData:[str dataUsingEncoding:NSUTF8StringEncoding] privateKey:privKey];
     NSString *ret = base64_encode_data(data);
     return ret;
 }
 
-+ (NSData *)encryptData:(NSData *)data privateKey:(NSString *)privKey{
++ (NSData *)jk_encryptData:(NSData *)data privateKey:(NSString *)privKey{
     if(!data || !privKey){
         return nil;
     }
@@ -347,14 +347,14 @@ static NSData *base64_decode(NSString *str){
 }
 
 
-+ (NSString *)decryptString:(NSString *)str privateKey:(NSString *)privKey{
++ (NSString *)jk_decryptString:(NSString *)str privateKey:(NSString *)privKey{
     NSData *data = [[NSData alloc] initWithBase64EncodedString:str options:NSDataBase64DecodingIgnoreUnknownCharacters];
-    data = [EncryptionRSA decryptData:data privateKey:privKey];
+    data = [EncryptionRSA jk_decryptData:data privateKey:privKey];
     NSString *ret = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     return ret;
 }
 
-+ (NSData *)decryptData:(NSData *)data privateKey:(NSString *)privKey{
++ (NSData *)jk_decryptData:(NSData *)data privateKey:(NSString *)privKey{
     if(!data || !privKey){
         return nil;
     }
@@ -365,13 +365,13 @@ static NSData *base64_decode(NSString *str){
     return [EncryptionRSA decryptData:data withKeyRef:keyRef];
 }
 
-+ (NSString *)encryptString:(NSString *)str publicKey:(NSString *)pubKey{
-    NSData *data = [EncryptionRSA encryptData:[str dataUsingEncoding:NSUTF8StringEncoding] publicKey:pubKey];
++ (NSString *)jk_encryptString:(NSString *)str publicKey:(NSString *)pubKey{
+    NSData *data = [EncryptionRSA jk_encryptData:[str dataUsingEncoding:NSUTF8StringEncoding] publicKey:pubKey];
     NSString *ret = base64_encode_data(data);
     return ret;
 }
 
-+ (NSData *)encryptData:(NSData *)data publicKey:(NSString *)pubKey{
++ (NSData *)jk_encryptData:(NSData *)data publicKey:(NSString *)pubKey{
     if(!data || !pubKey){
         return nil;
     }
@@ -382,14 +382,14 @@ static NSData *base64_decode(NSString *str){
     return [EncryptionRSA encryptData:data withKeyRef:keyRef isSign:NO];
 }
 
-+ (NSString *)decryptString:(NSString *)str publicKey:(NSString *)pubKey{
++ (NSString *)jk_decryptString:(NSString *)str publicKey:(NSString *)pubKey{
     NSData *data = [[NSData alloc] initWithBase64EncodedString:str options:NSDataBase64DecodingIgnoreUnknownCharacters];
-    data = [EncryptionRSA decryptData:data publicKey:pubKey];
+    data = [EncryptionRSA jk_decryptData:data publicKey:pubKey];
     NSString *ret = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     return ret;
 }
 
-+ (NSData *)decryptData:(NSData *)data publicKey:(NSString *)pubKey{
++ (NSData *)jk_decryptData:(NSData *)data publicKey:(NSString *)pubKey{
     if(!data || !pubKey){
         return nil;
     }
