@@ -11,24 +11,25 @@
 @implementation KingTimer
 
 + (void)countdownTimer:(NSInteger)time timeout:(TimeoutBlock)outBlock timecontinue:(TimecontinueBlock)continueBlock {
-    __block NSInteger timeout = time;  //设置倒计时
+    __block NSInteger intinterval = time;  //设置倒计时
     // 1.定义全局队列
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     // 2.定义timer
     dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
     dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, 1.0 * NSEC_PER_SEC, 0);
+    NSDate *endTime = [NSDate dateWithTimeIntervalSinceNow:intinterval];// 最后期限
     dispatch_source_set_event_handler(timer, ^{
-        if (timeout < 0) {
+        intinterval = [endTime timeIntervalSinceNow];
+        if (intinterval <= 0) { //倒计时结束
             dispatch_source_cancel(timer);
             dispatch_async(dispatch_get_main_queue(), ^{
                 outBlock();
             });
-        }else{
-            NSString *strTime = [NSString stringWithFormat:@"%@", @(timeout)];
+        }else { //倒计时更新
+            NSString *strTime = [NSString stringWithFormat:@"%@", @(intinterval)];
             dispatch_async(dispatch_get_main_queue(), ^{
                 continueBlock(strTime);
             });
-            timeout--;
         }
     });
     dispatch_resume(timer);
